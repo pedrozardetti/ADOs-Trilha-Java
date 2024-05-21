@@ -56,7 +56,7 @@ public class Menu {
                     break;
             }
         } while (opcao != 0);
-        System.out.println("Você saiu da nossa biblioteca :(");
+        System.out.println("Você saiu da nossa biblioteca!");
     }
 }
 
