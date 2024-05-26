@@ -1,4 +1,4 @@
-package ADO1;
+package ADO1AL;
 
 public class Livro {
 
@@ -38,7 +38,7 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Título - " + titulo + ", Autor - " + autor + ", Ano de Publicação - " + anoPublicacao;
+        return "Livro [titulo=" + titulo + ", autor=" + autor + ", anoPublicacao=" + anoPublicacao + "]";
     }
-}
 
+}
