@@ -1,4 +1,4 @@
-package ADO1;
+package ADO1AL;
 
 import java.util.Scanner;
 
