@@ -39,10 +39,5 @@ public class Livros {
     public String toString() {
         return "Livros: titulo - " + titulo + ", autor - " + autor + ", anoPublicacao - " + anoPublicacao;
     }
-
-
-    
-
-
-    
 }
+
