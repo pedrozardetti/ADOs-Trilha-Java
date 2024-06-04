@@ -79,10 +79,12 @@ public class Agendamento {
         this.sintoma = sintoma;
     }
 
-    @Override
     public String toString() {
-        return "Nome do paciente - " + nomePaciente + " | CPF - " + cpf + " | Data de Nascimento - " + dataNasc + " | Sintoma - "
-                + sintoma;
+        if (nomePaciente != null) {
+            return "Nome do paciente - " + nomePaciente + " | CPF - " + cpf + " | Data de Nascimento - " + dataNasc
+                    + " | Sintoma - " + sintoma;
+        } else {
+            return "Nome do médico - " + nomeMedico + " | CRM - " + crm + " | Especialidade - " + especialidade;
+        }
     }
-
 }
