@@ -62,7 +62,7 @@ public class Menu {
                 break;
 
             case 3:
-                consulta.listarPaciente();
+                consulta.listarPacientes();
                 break;
 
             case 4:
@@ -71,17 +71,20 @@ public class Menu {
 
             case 5:
                 System.out.println("Informe o CPF do paciente que deseja procurar");
+                sc.nextLine();
                 String buscarCpf = sc.nextLine();
                 consulta.buscarPaciente(buscarCpf);
                 break;
 
             case 6:
                 System.out.println("Informe o CRM do médico que deseja procurar");
+                sc.nextLine();
                 String buscarCrm = sc.nextLine();
                 consulta.buscarMedico(buscarCrm);
                 break;
 
             case 0:
+                System.out.println("Saindo do sistema...");
                 return;
 
         }
