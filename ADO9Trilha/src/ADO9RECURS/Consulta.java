@@ -4,49 +4,51 @@ import java.util.ArrayList;
 
 public class Consulta {
 
-    ArrayList<Agendamento> clinica = new ArrayList<>();
+    private ArrayList<Agendamento> pacientes = new ArrayList<>();
+    private ArrayList<Agendamento> medicos = new ArrayList<>();
 
     public void cadastrarPaciente(Agendamento agendamento) {
-        clinica.add(agendamento);
+        pacientes.add(agendamento);
         System.out.println("O paciente foi cadastrado!");
         System.out.println("Nome: " + agendamento.getNomePaciente());
         System.out.println("CPF: " + agendamento.getCpf());
         System.out.println("Data de nascimento: " + agendamento.getDataNasc());
         System.out.println("Sintoma Principal: " + agendamento.getSintoma());
-
     }
 
-    public void cadastrarMedico(Agendamento agendamento2) {
-        clinica.add(agendamento2);
+    public void cadastrarMedico(Agendamento agendamento) {
+        medicos.add(agendamento);
         System.out.println("O médico foi cadastrado!");
-        System.out.println("Nome: " + agendamento2.getNomeMedico());
-        System.out.println("CRM: " + agendamento2.getCrm());
-        System.out.println("Especialidade: " + agendamento2.getEspecialidade());
+        System.out.println("Nome: " + agendamento.getNomeMedico());
+        System.out.println("CRM: " + agendamento.getCrm());
+        System.out.println("Especialidade: " + agendamento.getEspecialidade());
     }
 
-    public void listarPaciente() {
-        if (!clinica.isEmpty()) {
+    public void listarPacientes() {
+        if (!pacientes.isEmpty()) {
             System.out.println("Listando todos os pacientes!");
-            for (Agendamento agendamento : clinica) {
+            for (Agendamento agendamento : pacientes) {
                 System.out.println(agendamento);
             }
-        } else
+        } else {
             System.out.println("Não temos pacientes para listar!");
+        }
     }
 
     public void listarMedicos() {
-        if (!clinica.isEmpty()) {
+        if (!medicos.isEmpty()) {
             System.out.println("Listando todos os médicos");
-            for (Agendamento agendamento2 : clinica) {
-                System.out.println(agendamento2);
+            for (Agendamento agendamento : medicos) {
+                System.out.println(agendamento);
             }
-        } else
+        } else {
             System.out.println("Não temos médicos para listar!");
+        }
     }
 
     public void buscarPaciente(String buscarCpf) {
-
-        for (Agendamento agendamento : clinica) {
+        boolean found = false;
+        for (Agendamento agendamento : pacientes) {
             if (agendamento.getCpf().equalsIgnoreCase(buscarCpf)) {
                 System.out.println("Encontramos o paciente");
                 System.out.println("Aqui estão suas informações relevantes!");
@@ -54,22 +56,30 @@ public class Consulta {
                 System.out.println("CPF: " + agendamento.getCpf());
                 System.out.println("Data de nascimento: " + agendamento.getDataNasc());
                 System.out.println("Sintoma Principal: " + agendamento.getSintoma());
-            } else
-                System.out.println("Não foi possível encontrar este CPF em nossa clínica :(");
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Não foi possível encontrar este CPF em nossa clínica :(");
         }
     }
 
     public void buscarMedico(String buscarCrm) {
-        for (Agendamento agendamento2 : clinica) {
-            if (agendamento2.getCrm().equalsIgnoreCase(buscarCrm)) {
+        boolean found = false;
+        for (Agendamento agendamento : medicos) {
+            if (agendamento.getCrm().equalsIgnoreCase(buscarCrm)) {
                 System.out.println("Encontramos o médico!");
                 System.out.println("Aqui estão suas informações relevantes!");
-                System.out.println("Nome: " + agendamento2.getNomeMedico());
-                System.out.println("CRM: " + agendamento2.getCrm());
-                System.out.println("Especialidade: " + agendamento2.getEspecialidade());
-
-            } else
-                System.out.println("Não foi possível encontrar este CRM em nossa clínica :()");
+                System.out.println("Nome: " + agendamento.getNomeMedico());
+                System.out.println("CRM: " + agendamento.getCrm());
+                System.out.println("Especialidade: " + agendamento.getEspecialidade());
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Não foi possível encontrar este CRM em nossa clínica :(");
         }
     }
 }
