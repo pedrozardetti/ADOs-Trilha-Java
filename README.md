@@ -46,7 +46,7 @@ Para configurar e explorar os códigos neste repositório, siga estes passos:
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/ADOs-Trilha-Java.git
+    git clone https://github.com/pedrozardetti/ADOs-Trilha-Java.git
     ```
 
 2. Navegue até o diretório do projeto:
